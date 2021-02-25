@@ -4,11 +4,15 @@ const todoReducer = (state, action) => {
     
     switch(action.type){
         case ADD_TODO:
-            console.log(state);
+            
             return[...state, action.payload] ;
             
         case TODO_COMPLETE:
-            return[...state, !action.payload.completed];
+            return state.map(item => {
+                if(item.id === action.payload.id){
+                    return {...item, complete: !item.complete}
+                }else{return item}
+            });
         default:
             return state; 
     }

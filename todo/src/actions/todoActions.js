@@ -9,7 +9,7 @@ export default {
         return { type: ADD_TODO, payload: constructTodo };
     },
     todoComplete: (todo) => {
-        const completedTodo = {item: todo, completed: false, id: Date.now}
-        return {type: TODO_COMPLETE, payload: completedTodo}
+        console.log('fired');
+        return {type: TODO_COMPLETE, payload: todo}
     }
 }

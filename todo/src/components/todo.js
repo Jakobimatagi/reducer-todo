@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useReducer } from "react";
 import todoReducer from "../reducers/todoReducer";
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import actions from "../actions/todoActions";
 
 const Todo = () => {
@@ -12,6 +12,7 @@ const Todo = () => {
   const handleChanges = (e) => {
     setTodoText(e.target.value);
   };
+  console.log(state);
   return (
      
     <div>
@@ -30,8 +31,10 @@ const Todo = () => {
         <h2>Todo List</h2>
         <h3 >
           {state.map((e) => {
+              
             return (
-                <div onClick={() => dispatch(actions.todoComplete(newTodoText))} className={e.completed ? 'lineThrough' : 'noLine'}>
+                
+                <div onClick={() => dispatch(actions.todoComplete(e))} className={e.completed ? 'lineThrough' : 'noLine'}>
                 {e.item}
                 </div>
                 );
