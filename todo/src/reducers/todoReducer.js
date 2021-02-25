@@ -1,4 +1,4 @@
-import {ADD_TODO, TODO_COMPLETE} from '../actions/todoActions'
+import {ADD_TODO, REMOVE_TODO, TODO_COMPLETE} from '../actions/todoActions'
 
 const todoReducer = (state, action) => {
     
@@ -13,6 +13,12 @@ const todoReducer = (state, action) => {
                     return {...item, complete: !item.complete}
                 }else{return item}
             });
+        case REMOVE_TODO:
+            return state.map(item =>{
+                if(item.id === action.payload.id){
+                    return []
+                }else {return item}
+            })
         default:
             return state; 
     }

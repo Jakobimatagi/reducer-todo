@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 export const ADD_TODO = "ADD_TODO";
 export const TODO_COMPLETE = "TODO_COMPLETE";
-
+export const REMOVE_TODO = "REMOVE_TODO"
 
 export default {
     addTodo: (todo) => {
@@ -11,5 +11,8 @@ export default {
     todoComplete: (todo) => {
         console.log('fired');
         return {type: TODO_COMPLETE, payload: todo}
+    },
+    removeTodo: (todo) => {
+        return {type: REMOVE_TODO, payload: todo}
     }
 }

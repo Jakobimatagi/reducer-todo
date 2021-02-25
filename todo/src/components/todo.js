@@ -36,6 +36,7 @@ const Todo = () => {
                 
                 <div onClick={() => dispatch(actions.todoComplete(e))} className={e.completed ? 'lineThrough' : 'noLine'}>
                 {e.item}
+                <button onClick={() => dispatch(actions.removeTodo(e))}>Remove</button>
                 </div>
                 );
           })}
@@ -48,15 +49,3 @@ const Todo = () => {
   );
 };
 export default Todo;
-
-// const StyledDiv = styled.div`
-
-// .lineThrough{
-//     text-decoration: line-through;
-// }
-
-// .noLine{
-//     text-decoration: none;
-// }
-
-// `
